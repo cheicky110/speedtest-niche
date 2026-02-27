@@ -3,6 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
+  <script src="config.js"></script>
   <meta name="google-site-verification" content="LNlUqDUsoIcbzDScfKmDdou7-1QTsmke3M4EbB1NFyo" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Test de Vitesse Internet Gratuit – Gaming, Télétravail, Streaming | NetDiag Pro</title>
@@ -741,11 +742,10 @@
   <!-- ─────────────────────────────── SCRIPTS ─────────────────────────────── -->
   <script>
     // ═══════════════════════════════════════════════════════
-    //   SPEED TEST ENGINE (Fetch-based real measurement)
-    // ═══════════════════════════════════════════════════════
-    const DOWNLOAD_URL = 'https://speed.cloudflare.com/__down?bytes=20000000'; // 20 MB single fetch
-    const UPLOAD_URL = 'https://speed.cloudflare.com/__up';
-    const PING_URL = 'https://speed.cloudflare.com/__ping';
+    // Chargement depuis config.js
+    const DOWNLOAD_URL = window.APP_CONFIG.SPEED_TEST.DOWNLOAD_URL;
+    const UPLOAD_URL = window.APP_CONFIG.SPEED_TEST.UPLOAD_URL;
+    const PING_URL = window.APP_CONFIG.SPEED_TEST.PING_URL;
 
     // State
     let results = { ping: 0, jitter: 0, download: 0, upload: 0 };
@@ -1054,7 +1054,7 @@
           title: 'Améliorez votre Ping Gaming',
           desc: `Votre ping de ${results.ping}ms peut nuire à vos performances en jeu. Un routeur gaming avec QoS ou un VPN optimisé peut faire chuter votre latence sous les 30ms.`,
           ctas: [
-            { label: '🔍 Meilleur Routeur Gaming', href: 'https://amzn.to/4qNVggf' },
+            { label: '🔍 Meilleur Routeur Gaming', href: window.APP_CONFIG.AFFILIATE_LINKS.GAMING_ROUTER },
             { label: '⚡ VPN Anti-Lag Premium', href: '#' },
           ]
         });
@@ -1066,7 +1066,7 @@
           title: 'Optimisez votre Télétravail',
           desc: `Votre upload de ${results.upload} Mbps peut limiter la qualité de vos appels vidéo. Passez en fibre ou utilisez un amplificateur Wi-Fi.`,
           ctas: [
-            { label: '📶 Meilleur Amplificateur Wi‑Fi', href: 'https://amzn.to/4tWl6la' },
+            { label: '📶 Meilleur Amplificateur Wi‑Fi', href: window.APP_CONFIG.AFFILIATE_LINKS.WIFI_BOOSTER },
             { label: '💡 Guide Optimisation Réseau', href: '#' },
           ]
         });
@@ -1079,7 +1079,7 @@
           desc: `${results.download} Mbps ne suffit pas pour du 4K sans interruptions. Une connexion fibre ou un câble Ethernet direct améliorera votre expérience.`,
           ctas: [
             { label: '🚀 Offres Fibre Comparées', href: '#' },
-            { label: '🔌 Câble Ethernet Cat8', href: 'https://amzn.to/4awMONH' },
+            { label: '🔌 Câble Ethernet Cat8', href: window.APP_CONFIG.AFFILIATE_LINKS.ETHERNET_CABLE },
           ]
         });
       }
@@ -1091,7 +1091,7 @@
           desc: 'Votre connexion est excellente pour tous les usages. Pour aller encore plus loin, découvrez les accessoires pro qui maximisent votre expérience.',
           ctas: [
             { label: '🎧 Setup Gaming Pro', href: '#' },
-            { label: '📡 Routeur Wi‑Fi 7', href: 'https://amzn.to/4qVVCBN' },
+            { label: '📡 Routeur Wi‑Fi 7', href: window.APP_CONFIG.AFFILIATE_LINKS.WIFI7_ROUTER },
           ]
         });
       }
