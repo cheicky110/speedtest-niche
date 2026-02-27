@@ -1,0 +1,8 @@
+[build]
+  # On laisse la commande vide car vous n'avez pas de script de build (pas de Gulp/Node)
+  command = ""
+  # On publie la racine du projet (.) car vos fichiers sont à la racine
+  publish = "."
+
+[build.environment]
+  # Ici on pourra ajouter des variables par défaut si besoin
